@@ -21,7 +21,8 @@ While it's possible to reduce the button components to a single component, I cho
 Make sure you have Node.js installed. Then run:
 
 `npm install`
-4. Run the application:
+
+3. Run the application:
 
 `npm start`
 
