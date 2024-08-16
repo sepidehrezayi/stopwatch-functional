@@ -1,50 +1,43 @@
-# React + TypeScript + Vite
+# Stopwatch Application
+This is a simple Stopwatch application built with React and TypeScript. The application allows users to start, stop, reset the stopwatch, and record lap times. The UI is styled using Bootstrap for a clean and modern look.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In this version, the project is implemented using functional components in React 18. My goal was to showcase the capabilities of React 18, including how to effectively manage state and side effects with hooks. Additionally, I aimed to demonstrate best practices in component design by extracting the button logic into separate components, resulting in cleaner and more maintainable code.
 
-Currently, two official plugins are available:
+While it's possible to reduce the button components to a single component, I chose to keep them separate to avoid passing too many props, maintaining clarity and simplicity in the component structure.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Start/Stop: Toggle the stopwatch on and off.
+- Reset: Reset the stopwatch back to 0.
+- Lap: Record and display lap times.
+- Delete Laps: Remove individual lap times.
+  
+## Installation
 
-## Expanding the ESLint configuration
+1. Clone the repository:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+`git clone https://github.com/sepidehrezayi/stopwatch-functional.git`
 
-- Configure the top-level `parserOptions` property like this:
+2. Install dependencies:
+Make sure you have Node.js installed. Then run:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+`npm install`
+4. Run the application:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+`npm start`
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Project Structure
+- **src/components/Stopwatch.tsx:** The main stopwatch component that handles timing logic and displays the UI.
+- **src/components/buttons/StartStopButton.tsx:** Component for the start/stop button.
+- **src/components/buttons/ResetButton.tsx:** Component for the reset button.
+- **src/components/buttons/LapButton.tsx:** Component for the lap button.
+- **src/components/Lap.tsx:** Component that displays and manages lap times.
+- **src/utils/timeFormatter.ts:** Utility function for formatting time in MM
+format.
+- **src/components/stopwatch.css:** CSS file for styling the stopwatch.
+  
+## Technologies Used
+- React
+- TypeScript
+- Bootstrap
+- CSS
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
